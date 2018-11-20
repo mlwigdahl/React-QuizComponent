@@ -1,18 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class QuizEnd extends Component {
-    render() {
-        return (
-            <div>
-                <p>Thanks for playing!</p>
-                <a href='' onClick={this.handleResetClick.bind(this)}>Reset Quiz</a>
-            </div>
-        );
+const QuizEnd = (props) => {
+    const handleResetClick = () => {
+        props.resetClickHandler();
     }
 
-    handleResetClick() {
-        this.props.resetClickHandler();
-    }
-};
+    return (
+        <div>
+            <p>Thanks for playing!</p>
+            <a href='' onClick={handleResetClick}>Reset Quiz</a>
+        </div>
+    )
+}
 
 export default QuizEnd;
